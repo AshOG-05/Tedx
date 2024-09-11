@@ -1,0 +1,54 @@
+{
+    "sponsors": [
+      {
+        "id": 1,
+        "name": "Shop1",
+        "desc": "Address",
+        "color": "#33505a",
+        "image": ""
+      },
+      {
+        "id": 2,
+        "name": "Shop2",
+        "desc": "Address",
+        "color": "#00ac51",
+        "image": ""
+      },
+      {
+        "id": 3,
+        "name": "Shop3",
+        "desc": "Address",
+        "color": "#e0bfae",
+        "image": ""
+      },
+      {
+        "id": 4,
+        "name": "Shop4",
+        "desc": "Address",
+        "color": "#544ee4",
+        "image": ""
+      },
+      {
+        "id": 5,
+        "name": "Shop5",
+        "desc": "Address",
+        "color": "#e3e4e9",
+        "image": ""
+      },
+      {
+        "id": 6,
+        "name": "Shop6",
+        "desc": "Address",
+        "color": "#1c1c1c",
+        "image": ""
+      },
+      {
+        "id": 7,
+        "name": "Shop7",
+        "desc": "Address",
+        "color": "#7c95eb",
+        "image": ""
+      }
+    ]
+  }
+  
