@@ -189,6 +189,7 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
+          //Speakers
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -235,6 +236,8 @@ class _HomepageState extends State<Homepage> {
               childCount: Speakers.items.length,
             ),
           ),
+
+          //Sponsors
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -251,7 +254,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                   const SizedBox(height: 20),
                   SizedBox(
-                    height: 200, // Adjust the height of the cards
+                    height: 200,
+                     // Adjust the height of the cards
                     child: ListView.builder(
                       controller: _scrollController, // Attach the scroll controller
                       scrollDirection: Axis.horizontal,
@@ -259,11 +263,15 @@ class _HomepageState extends State<Homepage> {
                       itemBuilder: (context, index) {
                         final unit = Sponsors.units[index];
                         return Card(
-                          margin: const EdgeInsets.symmetric(horizontal: 12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            //side: BorderSide(color: Colors.black54, width: 2),
+                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 12.0),
                           elevation: 5,
                           child: Container(
                             width: 200, // Adjust the width of the sponsor cards
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               children: [
                                 CircleAvatar(
@@ -272,27 +280,27 @@ class _HomepageState extends State<Homepage> {
                                       ? NetworkImage(unit.image)
                                       : null,
                                   child: unit.image.isEmpty
-                                      ? const Icon(
+                                      ? Icon(
                                           Icons.business,
                                           size: 50,
                                           color: Colors.white,
                                         )
                                       : null,
                                 ),
-                                const SizedBox(height: 10),
+                                SizedBox(height: 10),
                                 Text(
                                   unit.name,
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 5),
+                                SizedBox(height: 5),
                                 Text(
                                   unit.desc,
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.black54,
                                   ),

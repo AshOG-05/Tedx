@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tedx/page/loginpage.dart';
+import 'package:tedx/page/recruitmentpage.dart';
 import 'package:tedx/utils/routes.dart';
 import 'package:tedx/page/homepage.dart';
 import 'package:tedx/widgets/themes.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
        // change / into homepage to work on home page
        "/": (context) => const Homepage(),
         MyRoutes.homeRoute: (context) => const Homepage(),
-        MyRoutes.loginRoute: (context) => LoginPage()
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.RecruitmentRoute:(context) => const Recruitmentpage()
       },
       );
      

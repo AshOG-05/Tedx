@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:tedx/utils/routes.dart';
 
-class LoginPage extends StatefulWidget {
+class Recruitmentpage extends StatefulWidget {
+  const Recruitmentpage({super.key});
+
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Recruitmentpage> createState() => _RecruitmentpageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  String name = "";
+class _RecruitmentpageState extends State<Recruitmentpage> {
+  final _formKey = GlobalKey<FormState>();
   bool changeButton = false;
-  final _formKey = GlobalKey<FormState>();  
 
-  moveToHome(BuildContext context) async {
+  void moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {  // Validate form
       setState(() {
         changeButton = true;
       });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
@@ -27,74 +28,75 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
       child: SingleChildScrollView(
         child: Form(
-          key: _formKey,  
+          key: _formKey, // Attach the form key
           child: Column(
             children: [
-              Container(
-                margin: const EdgeInsets.only(top: 20),
-                child: Image.asset(
-                  "assets/login.png",
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
+              const SizedBox(height: 100),
               const Text(
-                "Welcome",
+                "RECRUITMENT",
                 style: TextStyle(
                   fontSize: 28,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
+                   color: Color.fromARGB(255, 234, 21, 6),  
                 ),
               ),
-              const SizedBox(
-                height: 20.0,
-              ),
+              const SizedBox(height: 100),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                
                 child: Column(
+                  
                   children: [
                     TextFormField(
                       decoration: const InputDecoration(
-                        hintText: "Enter username",
-                        labelText: "Username",
+                        hintText: "Enter Name",
+                        labelText: "Name",
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Username cannot be empty";
+                          return "Name cannot be empty";
                         }
                         return null;
                       },
-                      onChanged: (value) {
-                        name = value;
-                        setState(() {});
-                      },
                     ),
+                    const SizedBox(height: 40),
                     TextFormField(
-                      obscureText: true,
                       decoration: const InputDecoration(
-                        hintText: "Enter password",
-                        labelText: "Password",
+                        hintText: "Enter USN",
+                        labelText: "USN",
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Password cannot be empty";
-                        } else if (value.length < 6) {
-                          return "Password needs to be at least 6 characters long";
+                          return "USN cannot be empty";
                         }
+                        // Add more specific validation if needed
                         return null;
                       },
                     ),
-                    const SizedBox(
-                      height: 40.0,
+                    const SizedBox(height: 40),
+                    TextFormField(
+                      keyboardType:TextInputType.number,
+                      decoration: const InputDecoration(
+                        hintText: "Enter Phone number",
+                        labelText: "Phone number",
+                        
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Phone number cannot be empty";
+                        }
+                        // Add more specific validation if needed
+                        return null;
+                      },
                     ),
+                    const SizedBox(height: 80),
                     Material(
-                      color: Colors.transparent,  
+                      color: Colors.transparent,
                       child: InkWell(
-                        onTap: () => moveToHome(context), 
+                        onTap: () => moveToHome(context),
                         child: AnimatedContainer(
                           duration: Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
@@ -106,14 +108,15 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.white,
                                 )
                               : Text(
-                                  "Login",
+                                  "Submit",
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
                                 ),
                           decoration: BoxDecoration(
-                            color: Colors.red[400],
+                            color: Color.fromARGB(255, 234, 21, 6),  
                             borderRadius:
                                 BorderRadius.circular(changeButton ? 50 : 8),
                           ),
@@ -122,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

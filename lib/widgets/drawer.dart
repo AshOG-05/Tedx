@@ -12,8 +12,8 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,  
         children: [
           const UserAccountsDrawerHeader(
-            accountName: Text("Ashish"), 
-            accountEmail: Text("ashish@gmail.com"),
+            accountName: Text("Name"), 
+            accountEmail: Text("name@gmail.com"),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 234, 21, 6),  
             ),
@@ -44,13 +44,15 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const ListTile(
-            leading: Icon(
+           ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.RecruitmentRoute);},
+            leading: const Icon(
               CupertinoIcons.briefcase,
               color: Colors.black,
             ),
-            title: Text(
-              "Requirements",
+            title: const Text(
+              "Recruitments",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,  
