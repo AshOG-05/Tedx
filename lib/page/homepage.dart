@@ -31,7 +31,6 @@ class _HomepageState extends State<Homepage> {
    
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 56,
@@ -50,18 +49,13 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 children: [
                   const SizedBox(height: 40),
-                  
-                  
                   Material(
                     elevation: 10,
                     borderRadius: BorderRadius.circular(500),
                     child: Container(
                       height: 362,
-                    
                       padding: EdgeInsets.all(16),
-                      //width: MediaQuery.of(context).size.width;
                       decoration: BoxDecoration(
-                        //border: Border.all(width: 2),
                         borderRadius: BorderRadius.circular(500),
                         gradient: const LinearGradient(
                           colors: [Color(0xFF00C6FF), Color(0xFF0072FF)],
@@ -132,7 +126,6 @@ class _HomepageState extends State<Homepage> {
                     'Lorem ipsum dolor sit doloremque corporis numquam debitis et dicta necessitatibus corrupti laboriosam vel error porro rerum! Ipsam ratione inventore cupiditate harum consequuntur eum neque sapiente quibusdam...',
                     style: TextStyle(
                       fontSize: 14,
-                      
                     ),
                   ),
                   const SizedBox(height: 74),
@@ -142,8 +135,7 @@ class _HomepageState extends State<Homepage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w900,
-                       color: Color.fromARGB(255, 245, 54, 40),
-                    
+                      color: Color.fromARGB(255, 245, 54, 40),
                     ),
                   ),
                 ],
@@ -159,9 +151,6 @@ class _HomepageState extends State<Homepage> {
                 final item = Speakers.items[index];
                 return Card(
                   margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  // shape: RoundedRectangleBorder(
-                  //   borderRadius: BorderRadius.circular(15),
-                  // ),
                   elevation: 5,
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(10.0),
@@ -183,13 +172,13 @@ class _HomepageState extends State<Homepage> {
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,  // Adjusted to be visible on light background
+                        color: Colors.black,
                       ),
                     ),
                     subtitle: Text(
                       item.desc,
                       style: const TextStyle(
-                        color: Colors.black54,  // Adjusted to be visible on light background
+                        color: Colors.black54,
                       ),
                     ),
                     tileColor: Color.fromARGB(255, 248, 249, 250),
@@ -197,6 +186,74 @@ class _HomepageState extends State<Homepage> {
                 );
               },
               childCount: Speakers.items.length,
+            ),
+          ),
+          // Horizontal Scrollable Cards Section
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                const SizedBox(height: 74),
+                const Text("SPONSORS",
+                style: TextStyle( fontSize: 24,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(255, 245, 54, 40),
+
+                ),),
+                const SizedBox(height: 20,),
+                SizedBox(
+                  height: 200,
+                  child: PageView.builder(
+                    itemCount: 5, // Number of cards
+                    controller: PageController(viewportFraction: 0.8),
+                    physics: const PageScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Card(
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.orangeAccent,
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Sponsors ${index + 1}',
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                 const SizedBox(height: 74),
+                const Text("ABOUT TEDx",
+                style: TextStyle( fontSize: 24,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(255, 245, 54, 40),
+
+                ),),
+                //const SizedBox(height: 20,),
+                const Padding(
+                  padding: EdgeInsets.all(18.0),
+                  child: Text(
+                      textAlign: TextAlign.center,
+                      'Lorem ipsum dolor sit doloremque corporis numquam debitis et dicta necessitatibus corrupti laboriosam vel error porro rerum! Ipsam ratione inventore cupiditate harum consequuntur eum neque sapiente quibusdam...',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                ),
+              ],
             ),
           ),
         ],
