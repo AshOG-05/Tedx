@@ -75,6 +75,9 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+             onTap: () {
+               Navigator.pushNamed(context, MyRoutes.PastRoute);
+             },
             leading: Icon(
               CupertinoIcons.time,
               color: theme.iconTheme.color,
@@ -88,6 +91,9 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.ContactRoute);
+            },
             leading: Icon(
               CupertinoIcons.mail,
               color: theme.iconTheme.color,

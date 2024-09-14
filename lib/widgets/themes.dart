@@ -5,7 +5,7 @@ class MyTheme {
   // Light theme definition
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.redAccent,
+        primaryColor: const Color(0xFFEB0028),
         scaffoldBackgroundColor: Colors.white,
         fontFamily: GoogleFonts.poppins().fontFamily,
         appBarTheme: const AppBarTheme(
@@ -26,19 +26,19 @@ class MyTheme {
           titleLarge: TextStyle(fontSize: 18, color: Colors.black54), // headline6 -> titleLarge
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Color(0xFFEB0028),
         ),
         cardColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
         buttonTheme: const ButtonThemeData(
-          buttonColor: Colors.redAccent,
+          buttonColor: Color(0xFFEB0028),
           textTheme: ButtonTextTheme.primary,
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: Colors.grey[200],
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.redAccent),
+            borderSide: BorderSide(color: Color(0xFFEB0028),),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
@@ -49,7 +49,7 @@ class MyTheme {
   // Dark theme definition
   static ThemeData darkTheme(BuildContext context) => ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.redAccent,
+        primaryColor: Color(0xFFEB0028),
         scaffoldBackgroundColor: const Color(0xFF121212),
         fontFamily: GoogleFonts.poppins().fontFamily,
         appBarTheme: const AppBarTheme(
@@ -70,19 +70,19 @@ class MyTheme {
           titleLarge: TextStyle(fontSize: 18, color: Colors.white60), // headline6 -> titleLarge
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Color(0xFFEB0028),
         ),
         cardColor: const Color(0xFF1E1E1E),
         iconTheme: const IconThemeData(color: Colors.white),
         buttonTheme: const ButtonThemeData(
-          buttonColor: Colors.redAccent,
+          buttonColor: Color(0xFFEB0028),
           textTheme: ButtonTextTheme.primary,
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: Colors.grey[800],
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.redAccent),
+            borderSide: BorderSide(color: Color(0xFFEB0028)),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),

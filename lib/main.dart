@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tedx/page/contact.dart';
 
 import 'package:tedx/page/loginpage.dart';
+import 'package:tedx/page/pasteventspage.dart';
 import 'package:tedx/page/recruitmentpage.dart';
 import 'package:tedx/utils/routes.dart';
 import 'package:tedx/page/homepage.dart';
@@ -41,7 +43,9 @@ class MyApp extends StatelessWidget {
        "/": (context) => const Homepage(),
         MyRoutes.homeRoute: (context) => const Homepage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
-        MyRoutes.RecruitmentRoute:(context) => const Recruitmentpage()
+        MyRoutes.RecruitmentRoute:(context) => const RecruitmentPage(),
+        MyRoutes.ContactRoute:(context) => const Contact(),
+        MyRoutes.PastRoute:(context)=> const PastEventsPage(),
       },
       );
      
