@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';  // Import Provider for theme management
 import 'package:tedx/utils/routes.dart';
+import 'package:tedx/utils/theme_notifier.dart';  // Import your ThemeNotifier class
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -8,6 +10,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);  // Access the current theme
+    final themeNotifier = Provider.of<ThemeNotifier>(context);  // Access the ThemeNotifier
 
     return Drawer(
       child: ListView(
@@ -96,6 +99,24 @@ class MyDrawer extends StatelessWidget {
                 color: theme.textTheme.bodyLarge?.color,
               ),
             ),
+          ),
+          const Divider(),  // Add a divider before the theme switcher
+          SwitchListTile(
+            title: Text(
+              "Dark Mode",
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: theme.textTheme.bodyLarge?.color,
+              ),
+            ),
+            secondary: Icon(
+              themeNotifier.isDarkMode ? CupertinoIcons.moon : CupertinoIcons.sun_max,
+              color: theme.iconTheme.color,
+            ),
+            value: themeNotifier.isDarkMode,  // Get current theme mode from ThemeNotifier
+            onChanged: (bool value) {
+              themeNotifier.toggleTheme();  // Toggle the theme when the switch is used
+            },
           ),
         ],
       ),
