@@ -2,7 +2,7 @@
     "sponsors": [
       {
         "id": 1,
-        "name": "Shop1",
+        "name": "N.S. Silks",
         "desc": "Address",
         "color": "#33505a",
         "image": ""
@@ -33,20 +33,6 @@
         "name": "Shop5",
         "desc": "Address",
         "color": "#e3e4e9",
-        "image": ""
-      },
-      {
-        "id": 6,
-        "name": "Shop6",
-        "desc": "Address",
-        "color": "#1c1c1c",
-        "image": ""
-      },
-      {
-        "id": 7,
-        "name": "Shop7",
-        "desc": "Address",
-        "color": "#7c95eb",
         "image": ""
       }
     ]

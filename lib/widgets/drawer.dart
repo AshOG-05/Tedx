@@ -7,21 +7,32 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);  // Access the current theme
+
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,  
+        padding: EdgeInsets.zero,
         children: [
-          const UserAccountsDrawerHeader(
-            accountName: Text("Name"), 
-            accountEmail: Text("name@gmail.com"),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 234, 21, 6),  
+          UserAccountsDrawerHeader(
+            accountName: Text(
+              "Name",
+              style: theme.textTheme.bodyLarge?.copyWith(
+                color: Colors.white,  // Ensure text contrasts well with the background
+              ),
             ),
-            // iska image change karna hai 
+            accountEmail: Text(
+              "name@gmail.com",
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: Colors.white,
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: theme.primaryColor,  // Use primary color from the theme
+            ),
             currentAccountPicture: Align(
               alignment: Alignment.centerLeft,
               child: CircleAvatar(
-                backgroundImage: AssetImage(
+                backgroundImage: const AssetImage(
                   "assets/undraw_Male_avatar_g98d-ai-brush-removebg-re28fm5.png",
                 ),
                 radius: 30,
@@ -29,62 +40,63 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-           onTap: () {
+            onTap: () {
               Navigator.pushNamed(context, MyRoutes.loginRoute);
             },
-            leading: const Icon(
+            leading: Icon(
               CupertinoIcons.profile_circled,
-              color: Colors.black,
+              color: theme.iconTheme.color,  // Use icon color from the theme
             ),
-            title: const Text(
+            title: Text(
               "Profile",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,  
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: theme.textTheme.bodyLarge?.color,  // Use text color from the theme
               ),
             ),
           ),
-           ListTile(
+          ListTile(
             onTap: () {
-              Navigator.pushNamed(context, MyRoutes.RecruitmentRoute);},
-            leading: const Icon(
+              Navigator.pushNamed(context, MyRoutes.RecruitmentRoute);
+            },
+            leading: Icon(
               CupertinoIcons.briefcase,
-              color: Colors.black,
+              color: theme.iconTheme.color,
             ),
-            title: const Text(
+            title: Text(
               "Recruitments",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,  
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: theme.textTheme.bodyLarge?.color,
               ),
             ),
           ),
-         const ListTile(
+          ListTile(
             leading: Icon(
               CupertinoIcons.time,
-              color: Colors.black,
+              color: theme.iconTheme.color,
             ),
             title: Text(
               "Past Events",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,  
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: theme.textTheme.bodyLarge?.color,
               ),
             ),
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(
               CupertinoIcons.mail,
-              color: Colors.black,
+              color: theme.iconTheme.color,
             ),
             title: Text(
               "Contact Us",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,  
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: theme.textTheme.bodyLarge?.color,
               ),
             ),
-          ),  
+          ),
         ],
       ),
     );

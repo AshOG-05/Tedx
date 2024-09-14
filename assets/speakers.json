@@ -2,29 +2,29 @@
     "speakers": [
         {
             "id": 1,
-            "name": "Narendra Modi",
-            "desc": "Prime Minister of India, leading major economic and social reforms.",
+            "name": "SHREYA RAO",
+            "desc": "Shreya Rao Kamavarapu, Miss India 2018 runner-up and founder of Enchanté, a pageant grooming academy, challenged stereotypes with passion and innovation.",
             "color": "#33505a",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNouSYF7SGHOcJxxOF7XyyMbzyNWD5abuwjQ&s"
+            "image": "assets/SHREYA RAO.png"
         },
         {
             "id": 2,
-            "name": "Ratan Tata",
-            "desc": "Indian industrialist and former chairman of Tata Sons, known for his philanthropy.",
+            "name": "ASHOK VENKAT KURAKU",
+            "desc": "Ashok Venkat Kuraku, a distinguished IAS officer renowned for his visionary leadership and unwavering integrity.",
             "color": "#00ac51",
             "image": "https://asiaone.co.in/wp-content/uploads/2024/04/Ratan-Tata.jpg"
         },
         {
             "id": 3,
-            "name": "A. R. Rahman",
-            "desc": "Indian composer, singer, and music producer, winner of two Academy Awards.",
+            "name": "KAREN VINCENT",
+            "desc": "Karen Vincent, a vibrant and influential social media maven, shared her dynamic insights and digital expertise.",
             "color": "#e0bfae",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROrCj-tIOm-ZeElYA8z-PNol_YszpRmk4INw&s"
+            "image": "assets/KAREN VINCENT.png"
         },
         {
             "id": 4,
-            "name": "Sundar Pichai",
-            "desc": "CEO of Alphabet Inc. and its subsidiary Google LLC, tech visionary.",
+            "name": "ANURAG MAURYA",
+            "desc": "Anurag Maurya, a talented artist with exceptional storytelling skills, captivated the audience as one of the speakers at TEDxSiddaganga 2024.",
             "color": "#544ee4",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoguHACZpXrj5llOZZySnZ4OAxMg4z64julw&s"
         },
@@ -34,21 +34,6 @@
             "desc": "Indian actress, singer, and film producer, known for her work in Bollywood and Hollywood.",
             "color": "#e3e4e9",
             "image": "https://m.media-amazon.com/images/M/MV5BMjAxNzUwNjExOV5BMl5BanBnXkFtZTcwNDUyMTUxNw@@._V1_.jpg"
-        },
-
-        {
-            "id": 7,
-            "name": "Virat Kohli",
-            "desc": "Indian cricketer and former captain of the Indian national team.",
-            "color": "#1c1c1c",
-            "image": "https://images.news18.com/ibnlive/uploads/2024/03/virat-kohli-new-look-2024-03-6f105a11359bcf373307174cbcf039c9-3x2.jpg"
-        },
-        {
-            "id": 8,
-            "name": "Deepika Padukone",
-            "desc": "Indian actress and producer, known for her roles in Bollywood films.",
-            "color": "#7c95eb",
-            "image": "https://imagevars.gulfnews.com/2024/06/20/Deepika-Padukone-at-the-trailer-launch-of-Kalki-AD_19034c113ef_medium.jpg"
         }
     ]
 }

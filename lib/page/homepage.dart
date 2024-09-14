@@ -54,7 +54,7 @@ class _HomepageState extends State<Homepage> {
 
         if (currentPosition < maxScrollExtent) {
           _scrollController.animateTo(
-            currentPosition +200, // Scroll by the width of one card
+            currentPosition + 200, // Scroll by the width of one card
             duration: const Duration(seconds: 1),
             curve: Curves.easeInOut,
           );
@@ -78,16 +78,25 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context); // Use the current theme
+    final isDarkMode = theme.brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 56,
-        title: Image.asset(
+        title: isDarkMode?
+         Image.asset(
+          "assets/Tedx logo -Photoroom.png",
+          fit: BoxFit.contain,
+          alignment: Alignment.topLeft,
+          height: 55,
+        )
+        :Image.asset(
           "assets/tedx black logo.png",
           fit: BoxFit.contain,
           alignment: Alignment.topLeft,
           height: 55,
-        ),
-      ),
+      ),),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -104,8 +113,10 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(500),
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF00C6FF), Color(0xFF0072FF)],
+                        gradient: LinearGradient(
+                          colors: isDarkMode
+                              ? [Color(0xFF444444), Color(0xFF222222)] // Dark theme gradient
+                              : [Color(0xFF00C6FF), Color(0xFF0072FF)], // Light theme gradient
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -115,16 +126,14 @@ class _HomepageState extends State<Homepage> {
                           const SizedBox(height: 52),
                           Text(
                             "THEME 2024",
-                            style: TextStyle(
-                              fontSize: 16,
+                            style: theme.textTheme.bodyLarge!.copyWith(
                               fontWeight: FontWeight.w900,
-                              color: Colors.black,
-                              fontFamily: GoogleFonts.firaSans().fontFamily,
+                              color: theme.primaryColor,
                             ),
                           ),
                           Text(
                             "Beyond",
-                            style: TextStyle(
+                            style: theme.textTheme.displayLarge!.copyWith(fontFamily: GoogleFonts.ultra().fontFamily,fontSize: 54,fontWeight: FontWeight.normal,
                               shadows: [
                                 Shadow(
                                   offset: const Offset(2.0, 2.0),
@@ -132,19 +141,15 @@ class _HomepageState extends State<Homepage> {
                                   color: Colors.black.withOpacity(0.5),
                                 ),
                               ],
-                              fontSize: 54,
                               color: Colors.white,
-                              fontFamily: GoogleFonts.ultra().fontFamily,
                             ),
                           ),
                           Text(
                             "The Canvas",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 24,
+                            style: theme.textTheme.titleLarge!.copyWith(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
-                              fontFamily: GoogleFonts.firaSans().fontFamily,
                               shadows: [
                                 Shadow(
                                   offset: const Offset(2.0, 2.0),
@@ -161,35 +166,34 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 74),
                   Text(
                     'ABOUT THE THEME',
-                    style: TextStyle(
-                      fontSize: 24,
+                    style: theme.textTheme.titleLarge!.copyWith(
+                      color: theme.primaryColor,
                       fontWeight: FontWeight.w900,
-                      color: const Color.fromARGB(255, 245, 54, 40),
-                      fontFamily: GoogleFonts.poppins().fontFamily,
                     ),
                   ),
                   const Text(
                     textAlign: TextAlign.center,
-                    'Lorem ipsum dolor sit doloremque corporis numquam debitis et dicta necessitatibus corrupti laboriosam vel error porro rerum! Ipsam ratione inventore cupiditate harum consequuntur eum neque sapiente quibusdam...',
+                    'Our TEDx 2024 theme, "Beyond the Canvas," celebrated the boundless potential of creativity.It invited our audience to step outside the familiar frames of thought and explore the unseen—the stories, ideas, and innovations that defy convention. Like a masterpiece that stretches beyond its borders,the event was a vibrant fusion of art and intellect, inspiring attendees to reimagine what lies beyond the ordinary.',
+          
                     style: TextStyle(
                       fontSize: 14,
                     ),
                   ),
                   const SizedBox(height: 74),
-                  const Text(
+                  Text(
                     'SPEAKERS',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontSize: 24,
+                    style: theme.textTheme.titleLarge!.copyWith(
+                      color: theme.primaryColor,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 245, 54, 40),
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          //Speakers
+
+          //Speakers Section
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -200,36 +204,34 @@ class _HomepageState extends State<Homepage> {
                 return Card(
                   margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                   elevation: 5,
+                  color: theme.cardColor,
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(10.0),
                     leading: CircleAvatar(
                       radius: 35,
                       backgroundImage: item.image.isNotEmpty
-                          ? NetworkImage(item.image)
+                          ? AssetImage(item.image)
                           : null,
                       child: item.image.isEmpty
-                          ? const Icon(
+                          ? Icon(
                               Icons.person,
                               size: 35,
-                              color: Colors.white,
+                              color: theme.iconTheme.color,
                             )
                           : null,
                     ),
                     title: Text(
                       item.name,
-                      style: const TextStyle(
-                        fontSize: 18,
+                      style: theme.textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                     subtitle: Text(
                       item.desc,
-                      style: const TextStyle(
-                        color: Colors.black54,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: theme.textTheme.bodyMedium!.color,
                       ),
                     ),
-                    tileColor: const Color.fromARGB(255, 248, 249, 250),
                   ),
                 );
               },
@@ -237,25 +239,23 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
 
-          //Sponsors
+          //Sponsors Section
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: [
                   const SizedBox(height: 72),
-                  const Text(
+                  Text(
                     'OUR SPONSORS',
-                    style: TextStyle(
-                      fontSize: 24,
+                    style: theme.textTheme.titleLarge!.copyWith(
+                      color: theme.primaryColor,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 245, 54, 40),
                     ),
                   ),
                   const SizedBox(height: 20),
                   SizedBox(
-                    height: 200,
-                     // Adjust the height of the cards
+                    height: 200, // Adjust the height of the cards
                     child: ListView.builder(
                       controller: _scrollController, // Attach the scroll controller
                       scrollDirection: Axis.horizontal,
@@ -265,13 +265,13 @@ class _HomepageState extends State<Homepage> {
                         return Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
-                            //side: BorderSide(color: Colors.black54, width: 2),
                           ),
-                          margin: EdgeInsets.symmetric(horizontal: 12.0),
+                          margin: const EdgeInsets.symmetric(horizontal: 12.0),
                           elevation: 5,
+                          color: theme.cardColor,
                           child: Container(
                             width: 200, // Adjust the width of the sponsor cards
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Column(
                               children: [
                                 CircleAvatar(
@@ -283,29 +283,22 @@ class _HomepageState extends State<Homepage> {
                                       ? Icon(
                                           Icons.business,
                                           size: 50,
-                                          color: Colors.white,
+                                          color: theme.iconTheme.color,
                                         )
                                       : null,
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Text(
                                   unit.name,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: theme.textTheme.bodyLarge,
                                 ),
-                                SizedBox(height: 5),
+                                const SizedBox(height: 5),
                                 Text(
                                   unit.desc,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black54,
-                                  ),
+                                  style: theme.textTheme.bodyMedium,
                                 ),
-                                
                               ],
                             ),
                           ),
@@ -314,18 +307,17 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   const SizedBox(height: 72),
-                   const Text(
+                  Text(
                     'ABOUT TEDx',
-                    style: TextStyle(
-                      fontSize: 24,
+                    style: theme.textTheme.titleLarge!.copyWith(
+                      color: theme.primaryColor,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 245, 54, 40),
                     ),
                   ),
                   const SizedBox(height: 10),
                   const Text(
                     textAlign: TextAlign.center,
-                    'Lorem ipsum dolor sit doloremque corporis numquam debitis et dicta necessitatibus corrupti laboriosam vel error porro rerum! Ipsam ratione inventore cupiditate harum consequuntur eum neque sapiente quibusdam...',
+                    'Welcome to TEDx, where ideas come to life! Our club is a dynamic space for innovators, thinkers, and creators dedicated to organizing TEDx events that ignite inspiration. From curating speakers and crafting immersive experiences to storytelling and stage design, we offer the chance to be part of something bigger.Join us in shaping impactful conversations that push boundaries and spark change!',
                     style: TextStyle(
                       fontSize: 14,
                     ),
