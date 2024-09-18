@@ -30,12 +30,21 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
+      appBar: AppBar(
+        title: Text(
+          "Login",
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
+          ),  // Use the theme's title style
+        ),
+        backgroundColor: theme.primaryColor,
+      ),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
           child: Column(
             children: [
-              const SizedBox(height: 60),  // Adjusted to provide spacing
+              const SizedBox(height: 20),  // Adjusted to provide spacing
               Container(
                 margin: const EdgeInsets.only(top: 20),
                 child: Image.asset(

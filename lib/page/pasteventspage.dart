@@ -23,8 +23,8 @@ class PastEventsPage extends StatelessWidget {
           children: const [
             // Sample Event 1
             EventCard(
-              imageUrl: "assets/event1.jpg",
-              eventTitle: "TEDx Event 2023",
+              imageUrl: "assets/tedx black logo.png",
+              eventTitle: "The Unveiled Road",
               eventDate: "July 15, 2023",
               eventDescription: "A remarkable event featuring world-renowned speakers and thought leaders discussing innovation and creativity.",
             ),
@@ -32,8 +32,8 @@ class PastEventsPage extends StatelessWidget {
 
             // Sample Event 2
             EventCard(
-              imageUrl: "assets/event2.jpg",
-              eventTitle: "Women in Tech 2022",
+              imageUrl: "assets/tedx black logo.png",
+              eventTitle: "TEDx 2022",
               eventDate: "December 10, 2022",
               eventDescription: "An empowering event highlighting the achievements of women in technology and fostering inclusivity in the tech industry.",
             ),
@@ -41,8 +41,8 @@ class PastEventsPage extends StatelessWidget {
 
             // Sample Event 3
             EventCard(
-              imageUrl: "assets/event3.jpg",
-              eventTitle: "Youth and Innovation Summit 2021",
+              imageUrl: "assets/tedx black logo.png",
+              eventTitle: "TEDx 2021",
               eventDate: "November 2, 2021",
               eventDescription: "An inspiring event showcasing young innovators who are changing the world with their ideas.",
             ),
@@ -85,11 +85,15 @@ class EventCard extends StatelessWidget {
               topLeft: Radius.circular(12.0),
               topRight: Radius.circular(12.0),
             ),
-            child: Image.asset(
-              imageUrl,
-              height: 180,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0, top: 12),
+              child: Image.asset(
+                imageUrl,
+                height: 80,
+                
+               // width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(

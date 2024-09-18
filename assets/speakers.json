@@ -12,7 +12,7 @@
             "name": "ASHOK VENKAT KURAKU",
             "desc": "Ashok Venkat Kuraku, a distinguished IAS officer renowned for his visionary leadership and unwavering integrity.",
             "color": "#00ac51",
-            "image": "https://asiaone.co.in/wp-content/uploads/2024/04/Ratan-Tata.jpg"
+            "image": "assets/ASHOK VENKAT KURAKU.jpg"
         },
         {
             "id": 3,
@@ -26,14 +26,14 @@
             "name": "ANURAG MAURYA",
             "desc": "Anurag Maurya, a talented artist with exceptional storytelling skills, captivated the audience as one of the speakers at TEDxSiddaganga 2024.",
             "color": "#544ee4",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoguHACZpXrj5llOZZySnZ4OAxMg4z64julw&s"
+            "image": "assets/ANURAG MAURYA.jpg"
         },
         {
             "id": 5,
-            "name": "Priyanka Chopra",
-            "desc": "Indian actress, singer, and film producer, known for her work in Bollywood and Hollywood.",
+            "name": "SUBHA KALAYAN",
+            "desc": "Subha Kalyan IAS is a distinguished Indian Administrative Service officer known for her effective governance and leadership skills.",
             "color": "#e3e4e9",
-            "image": "https://m.media-amazon.com/images/M/MV5BMjAxNzUwNjExOV5BMl5BanBnXkFtZTcwNDUyMTUxNw@@._V1_.jpg"
+            "image": "assets/Subha-Kalyan.jpg"
         }
     ]
 }

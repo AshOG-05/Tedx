@@ -54,7 +54,7 @@ class _HomepageState extends State<Homepage> {
 
         if (currentPosition < maxScrollExtent) {
           _scrollController.animateTo(
-            currentPosition + 200, // Scroll by the width of one card
+            currentPosition + 150, // Scroll by the width of one card
             duration: const Duration(seconds: 1),
             curve: Curves.easeInOut,
           );
@@ -171,6 +171,7 @@ class _HomepageState extends State<Homepage> {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
+                  const SizedBox(height: 10,),
                   const Text(
                     textAlign: TextAlign.center,
                     'Our TEDx 2024 theme, "Beyond the Canvas," celebrated the boundless potential of creativity.It invited our audience to step outside the familiar frames of thought and explore the unseen—the stories, ideas, and innovations that defy convention. Like a masterpiece that stretches beyond its borders,the event was a vibrant fusion of art and intellect, inspiring attendees to reimagine what lies beyond the ordinary.',
@@ -238,7 +239,69 @@ class _HomepageState extends State<Homepage> {
               childCount: Speakers.items.length,
             ),
           ),
+          //Performers
+          // 
+          //    SliverToBoxAdapter(
+          //     child: Column(
+          //       children: [
+          //         const SizedBox(height: 74,),
+          //         Text(
+          //           'PERFORMERS',
+          //           textAlign: TextAlign.left,
+          //           style: theme.textTheme.titleLarge!.copyWith(
+          //             color: theme.primaryColor,
+          //             fontWeight: FontWeight.w900,
+          //           ),),
+          //           SizedBox(height: 20,)
 
+          //       ],
+          //     ),
+          //   ),
+          //   SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //     (context, index) {
+          //       if (index >= Speakers.items.length) {
+          //         return null;
+          //       }
+          //       final item = Speakers.items[index];
+          //       return Card(
+          //         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+          //         elevation: 5,
+          //         color: theme.cardColor,
+          //         child: ListTile(
+          //           contentPadding: const EdgeInsets.all(10.0),
+          //           leading: CircleAvatar(
+          //             radius: 35,
+          //             backgroundImage: item.image.isNotEmpty
+          //                 ? AssetImage(item.image)
+          //                 : null,
+          //             child: item.image.isEmpty
+          //                 ? Icon(
+          //                     Icons.person,
+          //                     size: 35,
+          //                     color: theme.iconTheme.color,
+          //                   )
+          //                 : null,
+          //           ),
+          //           title: Text(
+          //             item.name,
+          //             style: theme.textTheme.bodyLarge!.copyWith(
+          //               fontWeight: FontWeight.bold,
+          //             ),
+          //           ),
+          //           subtitle: Text(
+          //             item.desc,
+          //             style: theme.textTheme.bodyMedium!.copyWith(
+          //               color: theme.textTheme.bodyMedium!.color,
+          //             ),
+          //           ),
+          //         ),
+          //       );
+          //     },
+          //     childCount: Speakers.items.length,
+          //   ),
+          // ),
+          
           //Sponsors Section
           SliverToBoxAdapter(
             child: Padding(
@@ -255,9 +318,9 @@ class _HomepageState extends State<Homepage> {
                   ),
                   const SizedBox(height: 20),
                   SizedBox(
-                    height: 200, // Adjust the height of the cards
+                    height: 210, // Adjust the height of the cards
                     child: ListView.builder(
-                      controller: _scrollController, // Attach the scroll controller
+                      controller: _scrollController,// Attach the scroll controller
                       scrollDirection: Axis.horizontal,
                       itemCount: Sponsors.units.length,
                       itemBuilder: (context, index) {
@@ -277,7 +340,7 @@ class _HomepageState extends State<Homepage> {
                                 CircleAvatar(
                                   radius: 50,
                                   backgroundImage: unit.image.isNotEmpty
-                                      ? NetworkImage(unit.image)
+                                      ? AssetImage(unit.image)
                                       : null,
                                   child: unit.image.isEmpty
                                       ? Icon(

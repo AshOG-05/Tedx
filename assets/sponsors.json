@@ -3,38 +3,25 @@
       {
         "id": 1,
         "name": "N.S. Silks",
-        "desc": "Address",
+        "desc": "MG Road 3rd cross, Tumkur",
         "color": "#33505a",
-        "image": ""
+        "image": "assets/nssilk.jpeg"
       },
       {
         "id": 2,
-        "name": "Shop2",
+        "name": "Sponsor2",
         "desc": "Address",
         "color": "#00ac51",
         "image": ""
       },
       {
         "id": 3,
-        "name": "Shop3",
+        "name": "Sponsor3",
         "desc": "Address",
         "color": "#e0bfae",
         "image": ""
-      },
-      {
-        "id": 4,
-        "name": "Shop4",
-        "desc": "Address",
-        "color": "#544ee4",
-        "image": ""
-      },
-      {
-        "id": 5,
-        "name": "Shop5",
-        "desc": "Address",
-        "color": "#e3e4e9",
-        "image": ""
       }
+
     ]
   }
   
