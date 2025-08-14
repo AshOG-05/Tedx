@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "D:/App development/tedx/linux"
+    "cmake.sourceDirectory": "D:/App development/tedx/linux",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

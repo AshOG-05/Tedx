@@ -1,3 +1,15 @@
+// Top-level build.gradle file
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -5,14 +17,16 @@ allprojects {
     }
 }
 
+// Define a shared build directory for all subprojects
 rootProject.buildDir = "../build"
+
 subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(":app")
+    afterEvaluate { project ->
+        project.buildDir = "${rootProject.buildDir}/${project.name}"
+    }
 }
 
+// Register the clean task to clean the shared build directory
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
